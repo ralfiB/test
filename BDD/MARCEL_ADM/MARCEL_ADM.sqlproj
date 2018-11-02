@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MARCEL_ADM</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f7cf8907-405e-469b-9c63-92565fcd00d0}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MARCEL_ADM</RootNamespace>
+    <AssemblyName>MARCEL_ADM</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <Recovery>SIMPLE</Recovery>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="dbo\Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AdmMntFragIndex.sql" />
+    <Build Include="dbo\Tables\AdmExtractCsv.sql" />
+    <Build Include="dbo\Tables\DimDate.sql" />
+    <Build Include="dbo\Tables\Audit.sql" />
+    <Build Include="dbo\Tables\AdmRefSysSrc.sql" />
+    <Build Include="dbo\Tables\AdmRefFicMoulinette.sql" />
+    <Build Include="dbo\Tables\SuiviPurge.sql" />
+    <Build Include="dbo\Tables\RefParametreIntraD.sql" />
+    <Build Include="dbo\Tables\Flux_IntraD.sql" />
+    <Build Include="dbo\Tables\AdmPurge.sql" />
+    <Build Include="dbo\Tables\LogPrmJobMARCEL.sql" />
+    <Build Include="dbo\Tables\PrmPurgeManuelle.sql" />
+    <Build Include="dbo\Tables\PrmPurge.sql" />
+    <Build Include="dbo\Tables\PrmProcessCube.sql" />
+    <Build Include="dbo\Tables\PrmPilotageMARCEL.sql" />
+    <Build Include="dbo\Tables\PrmMARCEL.sql" />
+    <Build Include="dbo\Tables\PrmJobMARCEL.sql" />
+    <Build Include="dbo\Tables\PrmAdmParFtpConsulRepSource.sql" />
+    <Build Include="dbo\Tables\LogRejet.sql" />
+    <Build Include="dbo\Tables\Lancement.sql" />
+    <Build Include="dbo\Tables\AdmRefFic.sql" />
+    <Build Include="dbo\Tables\AdmParFtp.sql" />
+    <Build Include="dbo\Tables\AdmParBD.sql" />
+    <Build Include="dbo\Tables\AdmAno.sql" />
+    <Build Include="dbo\Tables\AdmLogIndex.sql" />
+    <Build Include="dbo\Tables\AdmFicTrtTransfert.sql" />
+    <Build Include="dbo\Tables\AdmFicTrt.sql" />
+    <Build Include="dbo\Tables\AdmRefStrFic.sql" />
+    <Build Include="dbo\Tables\Traitement.sql" />
+    <Build Include="dbo\Tables\AdmParTable.sql" />
+    <Build Include="dbo\Tables\Etape.sql" />
+    <Build Include="dbo\Tables\AdmFicTrtRej.sql" />
+    <Build Include="dbo\Tables\AdmFicTrtRejDet.sql" />
+    <Build Include="dbo\Tables\Flux.sql" />
+    <Build Include="dbo\Tables\RECORDSET.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PreMain_GetRequiredFileMasks.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AdmAno_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AdmFicTrt_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AdmFicTrt_Update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AdmFicTrtRej_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Audit_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Audit_Update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Etape_OnBegin.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Etape_OnEnd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Etape_OnError.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Flux_OnPreExecute.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Flux_OnPostExecute.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Flux_OnError.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Lancement_OnBegin.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Lancement_OnEnd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Lancement_OnError.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_LogPrmJobMARCEL_OnBegin.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_LogPrmJobMARCEL_OnEnd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_LogPrmJobMARCEL_OnError.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_LogPrmJobMARCEL_OnLogMessage.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Traitement_OnBegin.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Traitement_OnEnd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Traitement_OnError.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Event_Recordset_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PreMain_ConfigurePrmPilotageMARCEL.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PreMain_GetEligibleJobAndParameters.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpAdmFicTrtRej_OnIns.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpAdmFicTrtRej_OnEnd.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpSchRefStrFic.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpSchRefFile.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpSchFicTrt.sql" />
+    <Build Include="dbo\Stored Procedures\XCHSpSchIdRefFile.sql" />
+  </ItemGroup>
+</Project>
